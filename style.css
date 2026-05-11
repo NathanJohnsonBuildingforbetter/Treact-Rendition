@@ -304,6 +304,7 @@ Section */
     }
     .features {
         justify-content: center;
+        padding: 10px;
     }
 
     .feature {
