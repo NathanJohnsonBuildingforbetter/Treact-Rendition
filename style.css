@@ -8,9 +8,9 @@
 
 }
 
-/* html{
+html{
     scroll-behavior: smooth;
-} */
+}
 .row{
     width: 100%;
     max-width: 1280px;
@@ -41,7 +41,19 @@ button{
 .btn:hover {
   background-color: rgba(80, 17, 204);
 }
-/* Navigation */
+body {
+    max-width: 100vw;
+    overflow-x: hidden;
+}
+/*
+
+Navigation
+ */
+
+ nav {
+    padding-top: 32px;
+    display: flex;
+}
 .nav__row{
     display: flex;
     justify-content: space-between;
@@ -129,6 +141,89 @@ section{
   background-color: rgba(80, 17, 204);
   color: white;
 }
+.btn__menu {
+    background-color: transparent;
+    border: none;
+    display: none;
+    transition: all 300ms ease;}
+
+/* Navigation
+
+menu */
+.menu {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 378px;
+    margin: 24px 16px;
+    padding: 32px;
+    background-color: #fff;
+    border: 1px solid rgb(229, 231, 235);
+    border-radius: 8px;
+    z-index: 4;
+    visibility: hidden;
+    opacity: 0;
+    transform: translateX(300%);
+    transition: all 300ms ease;
+}
+
+.btn__menu {
+    background-color: transparent;
+    border: none;
+    display: none;
+    transition: all 300ms ease;
+}
+
+.btn__menu--close {
+    position: fixed;
+    top: 24px;
+    right: 18px;
+}
+
+.menu__links {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.menu__link {
+    color: #1a202c;
+    font-size: 18px;
+    font-weight: 600;
+    line-height: 1.5;
+    margin: 8px 0;
+    padding-bottom: 4px;
+    border-bottom: 2px solid transparent;
+}
+
+.menu__link--primary {
+    color: #f7fafc;
+    padding: 12px 32px;
+    background: #6415ff;
+    border-radius: 500px;
+    border: none;
+}
+
+.menu--open .menu {
+    visibility: visible;
+    opacity: 1;
+    transform: translateX(0);
+}
+
+.menu--open {
+  max-height: 100vh;
+  overflow-y: hidden;
+}
+.btn__menu--svg:hover {
+  filter: invert(26%) sepia(94%) saturate(7476%) hue-rotate(261deg)
+    brightness(94%) contrast(115%);
+}
+
+
+
 /* 
 
 Header
@@ -172,6 +267,7 @@ Header
     color: rgb(36, 62, 99);
     font-size: 16px;
     font-weight: 500;
+    position:absolute;
     top:0;
     bottom: 0;
     z-index: 1;
@@ -181,7 +277,7 @@ Header
 .header__email--btn{
     z-index: 2;
     margin: 8px;
-    height: calc(100%-16px);
+    height: calc(100% - 16px);
     border-radius: 500px;
     width: 160px;
     border: none;
@@ -301,6 +397,10 @@ Section */
     line-height: 2;
     font-size: 16px;
     margin-top: 16px;
+}
+.feature__img {
+    width: 24px;
+    height: 24px;
 }
 
 /* Quality
@@ -502,6 +602,9 @@ section */
 
 #values .btn {
     margin-top: 48px;
+}
+.values__description, .values__img {
+    width: 50%;
 }
 
 /* Pricing 
@@ -1211,6 +1314,16 @@ screens */
 
     footer {
         padding: 80px 32px;
+    }
+    
+    .btn__menu {
+        display: block;
+    }
+    .nav__links {
+        display: none;
+    }
+    .btn__menu {
+        display: block;
     }
 }
 /*
